@@ -1,0 +1,26 @@
+<% if current_user && current_user.id == @user.id%>
+  <h2 class=title text-align:center>Welcome to <%= @user.email %> home</h2>
+  <h3>List of patients</h3>
+  <% button_to "New patient", new_patient_path, :method => :get %>
+  <table>
+    <tbody>
+      <% if @patients %>
+        <tr class=header>
+          <td class=header_name>Name</td>
+          <td class=header_comment>Comment</td>
+        </tr>
+      <% end%>
+      <% @patients.each do |p|%>
+        <tr class=patient_<%= p.id%>> 
+          <td class=patient_name> <%= p.name%> </td>
+          <td class=patient_comment> <%= p.comment%> </td>
+          <td class=patient_edit><%= button_to "Edit", edit_patient_path(p.id), :method => :get %></td>
+          <td class=patient_delete><%= button_to "Delete", patient_path(p.id), :method => :delete, data: {confirm: "Are you sure?"} %></td>
+
+        </tr>
+      <% end%>
+    </tbody>
+  </table>
+<% else%>
+  <h2>Welcome Home</h2>
+<% end%>

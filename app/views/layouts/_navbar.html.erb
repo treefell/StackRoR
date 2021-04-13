@@ -1,0 +1,19 @@
+<header>
+  <br/>
+  <nav class="navbar" >
+    <% if user_signed_in? %>
+      <%= link_to user_path(current_user), class:"navbar-user" do %>
+        <span class="navbar_email"><%=current_user.email%></span>
+      <% end %>
+      <div class="dropdown_profile">
+      <%= link_to "Profile", user_path(current_user) %>        
+      </div>
+      <div class="dropdown-logout"></div>
+      <%= link_to "Log out", destroy_user_session_path, method: :delete %>
+    <% else %>
+      <div class="dropdown-login">
+        <%= link_to "Log in", new_user_session_path %>
+      </div>
+    <% end %>
+  </nav>
+</header>

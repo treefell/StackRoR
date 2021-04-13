@@ -1,0 +1,17 @@
+
+<% if @patient.user_id == current_user.id %>
+    <%= form_with model: @patient do |f|%>
+        <table>
+            <tr>
+                <td>Name</td>
+                <td>Comment</td>
+            </tr>
+            <tr>
+                <td><%= f.text_field :name, :value => @patient.name%></td>
+                <td><%= f.text_area :comment, :value => @patient.comment%></td>
+            </tr>
+        </table>
+            <%= f.submit "Save" %>
+        <%end%>
+<%end%>
+
