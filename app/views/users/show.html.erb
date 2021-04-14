@@ -1,7 +1,7 @@
 <% if current_user && current_user.id == @user.id%>
   <h2 class=title text-align:center>Welcome to <%= @user.email %> home</h2>
   <h3>List of patients</h3>
-  <% button_to "New patient", new_patient_path, :method => :get %>
+  <%= button_to "New patient", new_patient_path, :method => :get %>
   <table>
     <tbody>
       <% if @patients %>

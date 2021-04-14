@@ -1,14 +1,16 @@
 class PatientsController < ApplicationController
 
+    def new
+      @patient = Patient.new
+    end 
+
     def create
         @patient = Patient.new(patient_params)
         @patient.user_id = current_user.id
-        #patient.name = 
-        #patient.comment =  
-    end 
-
-    def new
-
+        if @patient.save
+          flash.notice = "Patient added"
+          redirect_to current_user
+        end
     end 
   
     def update
