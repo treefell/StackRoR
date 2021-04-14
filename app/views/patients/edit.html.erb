@@ -7,11 +7,13 @@
                 <td>Comment</td>
             </tr>
             <tr>
-                <td><%= f.text_field :name, :value => @patient.name%></td>
-                <td><%= f.text_area :comment, :value => @patient.comment%></td>
+                <td><%= f.text_field :name, :value => @patient.name, :class => "name_field"%></td>
+                <td><%= f.text_area :comment, :value => @patient.comment, :class => "comment_area"%></td>
             </tr>
         </table>
             <%= f.submit "Save" %>
         <%end%>
+<%else%>
+        <h2> Hey wrong user</h2>
 <%end%>
 

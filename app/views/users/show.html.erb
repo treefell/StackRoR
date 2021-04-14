@@ -14,8 +14,8 @@
         <tr class=patient_<%= p.id%>> 
           <td class=patient_name> <%= p.name%> </td>
           <td class=patient_comment> <%= p.comment%> </td>
-          <td class=patient_edit><%= button_to "Edit", edit_patient_path(p.id), :method => :get %></td>
-          <td class=patient_delete><%= button_to "Delete", patient_path(p.id), :method => :delete, data: {confirm: "Are you sure?"} %></td>
+          <td class=patient_edit><%= button_to "Edit", edit_patient_path(p), :method => :get %></td>
+          <td class=patient_delete><%= button_to "Delete", patient_path(p), :method => :delete, data: {confirm: "Are you sure?"} %></td>
 
         </tr>
       <% end%>
