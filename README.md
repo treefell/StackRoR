@@ -10,3 +10,5 @@ Run:
 
 then you can go on localhost:3000
 
+there is a test user: test@test.test
+with the password: azerty
