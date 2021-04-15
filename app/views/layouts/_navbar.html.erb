@@ -5,8 +5,8 @@
       <%= link_to user_path(current_user), class:"navbar-user" do %>
         <span class="navbar_email"><%=current_user.email%></span>
       <% end %>
-      <div class="dropdown_profile">
-      <%= link_to "Profile", user_path(current_user) %>        
+      <div class="dropdown_list_patient">
+      <%= link_to "List patients", user_path(current_user) %>        
       </div>
       <div class="dropdown-logout"></div>
       <%= link_to "Log out", destroy_user_session_path, method: :delete %>

@@ -3,15 +3,16 @@
     <%= form_with model: @patient do |f|%>
         <table>
             <tr>
-                <td>Name</td>
-                <td>Comment</td>
+                <th>Name</th>
+                <th>Comment</th>
+                <th>Action</th>
             </tr>
             <tr>
                 <td><%= f.text_field :name, :value => @patient.name, :class => "name_field"%></td>
                 <td><%= f.text_area :comment, :value => @patient.comment, :class => "comment_area"%></td>
+                <td><%= f.submit "Save", :class => "button_save" %></td>  
             </tr>
         </table>
-            <%= f.submit "Save" %>
         <%end%>
 <%else%>
         <h2> Hey wrong user</h2>

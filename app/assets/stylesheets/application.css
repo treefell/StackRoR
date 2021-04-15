@@ -13,7 +13,59 @@
  *= require_tree .
  *= require_self
  */
- table,
- td {
-     border: 1px solid #333;
- }
+h2, h3 {font-family: arial, sans-serif;}
+table {
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+  }
+  
+td, th {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;
+  }
+
+.navbar {
+    overflow: hidden;
+    background-color: #000;
+  }
+  
+.navbar a {
+    float: left;
+    color: #f2f2f2;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 17px;
+  }
+  
+.navbar a:hover {
+    background-color: #ddd;
+    color: black;
+  }
+
+textarea {
+    border: none;
+    width: 100%;
+    height: 100%;
+    -webkit-box-sizing: border-box; /* <=iOS4, <= Android  2.3 */
+    -moz-box-sizing: border-box; /* FF1+ */
+    box-sizing: border-box; /* Chrome, IE8, Opera, Safari 5.1*/
+}
+
+.button_new {
+    border-radius: 8px;
+}
+.button_delete {
+    border-radius: 8px;
+    width: 150px;
+}
+.button_edit {
+    border-radius: 8px;
+    width: 150px;
+}
+.button_save {
+    border-radius: 8px;
+    width: 150px;
+}

@@ -1,21 +1,24 @@
 <% if current_user && current_user.id == @user.id%>
   <h2 class=title text-align:center>Welcome to <%= @user.email %> home</h2>
   <h3>List of patients</h3>
-  <%= button_to "New patient", new_patient_path, :method => :get %>
+  <%= button_to "New patient", new_patient_path, :method => :get, :class => "button_new" %>
+  </br>
   <table>
     <tbody>
       <% if @patients %>
         <tr class=header>
-          <td class=header_name>Name</td>
-          <td class=header_comment>Comment</td>
+          <th class=header_name>Name</th>
+          <th class=header_comment>Comment</th>
+          <th class=header_action>Action</th>
         </tr>
       <% end%>
       <% @patients.each do |p|%>
         <tr class=patient_<%= p.id%>> 
           <td class=patient_name> <%= p.name%> </td>
           <td class=patient_comment> <%= p.comment%> </td>
-          <td class=patient_edit><%= button_to "Edit", edit_patient_path(p), :method => :get %></td>
-          <td class=patient_delete><%= button_to "Delete", patient_path(p), :method => :delete, data: {confirm: "Are you sure?"} %></td>
+          <td class=patient_action>
+          <%= button_to "Edit", edit_patient_path(p), :class => "button_edit" ,:method => :get %>
+          <%= button_to "Delete", patient_path(p), :class => "button_delete", :method => :delete, data: {confirm: "Are you sure?"} %></td>
 
         </tr>
       <% end%>
