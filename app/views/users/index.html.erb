@@ -1,0 +1,9 @@
+<h2>Welcome to the Patient management for Nutritionist</h2>
+<% if user_signed_in? %>
+    <%= link_to "Patient List", current_user %>
+<% else %>
+    <h3> You are not signed in </h3>
+    <%= link_to "Sign in", new_user_session_path %></br>
+    <h3> or if you don't have account</h3>
+    <%= link_to "Sign up", new_user_registration_path %>
+<% end %>
